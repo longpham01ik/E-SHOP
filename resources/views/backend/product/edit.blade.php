@@ -79,7 +79,7 @@
         </div>
         <div class="form-group">
           <label for="size">Size</label>
-          <select name="size[]" class="form-control selectpicker"  multiple data-live-search="true">
+          <!-- <select name="size[]" class="form-control selectpicker"  multiple data-live-search="true">
               <option value="">--Select any size--</option>
               @foreach($items as $item)              
                 @php 
@@ -91,7 +91,7 @@
               <option value="L"  @if( in_array( "L",$data ) ) selected @endif>Large</option>
               <option value="XL"  @if( in_array( "XL",$data ) ) selected @endif>Extra Large</option>
               @endforeach
-          </select>
+          </select> -->
         </div>
         <div class="form-group">
           <label for="brand_id">Brand</label>
