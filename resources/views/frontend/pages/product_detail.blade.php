@@ -100,7 +100,7 @@
 											</div> --}}
 											<!--/ End Color -->
 											<!-- Size -->
-											@if($product_detail->size)
+											<!-- @if($product_detail->size)
 												<div class="size mt-4">
 													<h4>Size</h4>
 													<ul>
@@ -113,7 +113,7 @@
 														@endforeach
 													</ul>
 												</div>
-											@endif
+											@endif -->
 											<!--/ End Size -->
 											<!-- Product Buy -->
 											<div class="product-buy">
