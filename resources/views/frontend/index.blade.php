@@ -75,7 +75,7 @@
                         <div class="col-lg-4 col-md-6 col-12">
                             <div class="single-banner">
                                 @if($cat->photo)
-                                    <img src="{{$cat->photo}}" alt="{{$cat->photo}}">
+                                    <img src="{{asset('images/category/'.$cat->photo)}}" alt="{{$cat->photo}}">
                                 @else
                                     <img src="https://via.placeholder.com/600x370" alt="#">
                                 @endif
@@ -140,8 +140,8 @@
                                                     $photo=explode(',',$product->photo);
                                                 // dd($photo);
                                                 @endphp
-                                                <img class="default-img" src="{{$photo[0]}}" alt="{{$photo[0]}}">
-                                                <img class="hover-img" src="{{$photo[0]}}" alt="{{$photo[0]}}">
+                                                <img class="default-img" src="{{asset('images/products/'.$photo[0])}}" alt="{{$photo[0]}}">
+                                                <img class="hover-img" src="{{asset('images/products/'.$photo[0])}}" alt="{{$photo[0]}}">
                                                 @if($product->stock<=0)
                                                     <span class="out-of-stock">Sale out</span>
                                                 @elseif($product->condition=='new')
@@ -513,33 +513,7 @@
                                         <div class="quickview-peragraph">
                                             <p>{!! html_entity_decode($product->summary) !!}</p>
                                         </div>
-                                        <!-- @if($product->size)
-                                            <div class="size">
-                                                <div class="row">
-                                                    <div class="col-lg-6 col-12">
-                                                        <h5 class="title">Size</h5>
-                                                        <select>
-                                                            @php 
-                                                            $sizes=explode(',',$product->size);
-                                                            // dd($sizes);
-                                                            @endphp
-                                                            @foreach($sizes as $size)
-                                                                <option>{{$size}}</option>
-                                                            @endforeach
-                                                        </select>
-                                                    </div>
-                                                    {{-- <div class="col-lg-6 col-12">
-                                                        <h5 class="title">Color</h5>
-                                                        <select>
-                                                            <option selected="selected">orange</option>
-                                                            <option>purple</option>
-                                                            <option>black</option>
-                                                            <option>pink</option>
-                                                        </select>
-                                                    </div> --}}
-                                                </div>
-                                            </div>
-                                        @endif -->
+
                                         <form action="{{route('single-add-to-cart')}}" method="POST" class="mt-4">
                                             @csrf 
                                             <div class="quantity">
