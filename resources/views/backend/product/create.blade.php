@@ -121,7 +121,7 @@
                   <i class="fa fa-picture-o"></i> Choose
                   </a>
               </span>
-          <input id="thumbnail" class="form-control" type="text" name="photo" value="{{old('photo')}}">
+          <input id="thumbnail" class="form-control" type="file" name="photo" value="{{old('photo')}}">
         </div>
         <div id="holder" style="margin-top:15px;max-height:100px;"></div>
           @error('photo')

@@ -62,7 +62,7 @@
                               <i class="fa fa-picture-o"></i> Choose
                               </a>
                           </span>
-                          <input id="thumbnail" class="form-control" type="text" name="photo" value="{{$profile->photo}}">
+                          <input id="thumbnail" class="form-control" type="file" name="photo" value="{{$profile->photo}}">
                       </div>
                         @error('photo')
                         <span class="text-danger">{{$message}}</span>
