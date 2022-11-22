@@ -35,13 +35,13 @@ return [
         'redirect' => 'http://localhost:8000/login/github/callback',
      ],
      'google' => [
-        'client_id' => '122886334250-fsfd8ugugkr0hjrkakukbgnnruomjn95.apps.googleusercontent.com', //Google API
-        'client_secret' => 'eyuwbzXGBgbebzPXNiqSOods', //Google Secret
+        'client_id' => '781933656240-68vebq78pgdlkm25delqtq9qhavo5fjj.apps.googleusercontent.com', //Google API
+        'client_secret' => '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', //Google Secret
         'redirect' => 'http://localhost:8000/login/google/callback',
      ],
      'facebook' => [
-        'client_id' => '1494792524037846', //Facebook API
-        'client_secret' => '1bf13c2faf680f4ae2b97bdafa92c7d2', //Facebook Secret
+        'client_id' => '905294523736466', //Facebook API
+        'client_secret' => '921d7fcb8e032a36ef5e2d94636c0a1a', //Facebook Secret
         'redirect' => 'http://localhost:8000/login/facebook/callback',
      ],
 
