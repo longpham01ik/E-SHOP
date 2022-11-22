@@ -128,7 +128,7 @@
                   <i class="fas fa-image"></i> Choose
                   </a>
               </span>
-          <input id="thumbnail" class="form-control" type="text" name="photo" value="{{$product->photo}}">
+          <input id="thumbnail" class="form-control" type="file" name="photo" value="{{$product->photo}}">
         </div>
         <div id="holder" style="margin-top:15px;max-height:100px;"></div>
           @error('photo')

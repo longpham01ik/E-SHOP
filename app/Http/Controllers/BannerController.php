@@ -59,6 +59,19 @@ class BannerController extends Controller
             request()->session()->flash('error','Error occurred while adding banner');
         }
         return redirect()->route('banner.index');
+        //upload file
+        // if($request->hasFile('photo')){
+        //     $path_dir = "images/banners/";
+        //     $file = $request->file('photo');
+        //     $fileName = $slug.$file->getClientOriginalName();
+        //     $filepath = $file->move($path_dir,$fileName);
+        //     $data ->img = $fileName;
+        //     $data->save();
+        //     return redirect()->route('product.index')->with('message',['typemsg'=>'succes','msg'=>'messege add success']);
+        // }
+        // else{
+        //     return redirect()->route('product.index')->with('imgerror','image don`t select');
+        // }
     }
 
     /**
