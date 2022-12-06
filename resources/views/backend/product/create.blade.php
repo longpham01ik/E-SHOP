@@ -5,7 +5,7 @@
 <div class="card">
     <h5 class="card-header">Add Product</h5>
     <div class="card-body">
-      <form method="post" action="{{route('product.store')}}">
+      <form method="post" action="{{route('product.store')}}" >
         {{csrf_field()}}
         <div class="form-group">
           <label for="inputTitle" class="col-form-label">Title <span class="text-danger">*</span></label>
@@ -36,7 +36,6 @@
           <label for="is_featured">Is Featured</label><br>
           <input type="checkbox" name='is_featured' id='is_featured' value='1' checked> Yes                        
         </div>
-              {{-- {{$categories}} --}}
 
         <div class="form-group">
           <label for="cat_id">Category <span class="text-danger">*</span></label>
@@ -52,9 +51,6 @@
           <label for="child_cat_id">Sub Category</label>
           <select name="child_cat_id" id="child_cat_id" class="form-control">
               <option value="">--Select any category--</option>
-              {{-- @foreach($parent_cats as $key=>$parent_cat)
-                  <option value='{{$parent_cat->id}}'>{{$parent_cat->title}}</option>
-              @endforeach --}}
           </select>
         </div>
 
@@ -73,20 +69,9 @@
           <span class="text-danger">{{$message}}</span>
           @enderror
         </div>
-        <!-- <div class="form-group">
-          <label for="size">Size</label>
-          <select name="size[]" class="form-control selectpicker"  multiple data-live-search="true">
-              <option value="">--Select any size--</option>
-              <option value="S">Small (S)</option>
-              <option value="M">Medium (M)</option>
-              <option value="L">Large (L)</option>
-              <option value="XL">Extra Large (XL)</option>
-          </select>
-        </div> -->
 
         <div class="form-group">
           <label for="brand_id">Brand</label>
-          {{-- {{$brands}} --}}
 
           <select name="brand_id" class="form-control">
               <option value="">--Select Brand--</option>
