@@ -51,8 +51,8 @@
 													// dd($photo);
 													@endphp
 													@foreach($photo as $data)
-														<li data-thumb="{{$data}}" rel="adjustX:10, adjustY:">
-															<img src="{{$data}}" alt="{{$data}}">
+														<li data-thumb="{{asset('images/products/'.$data)}}" rel="adjustX:10, adjustY:">
+															<img src="{{asset('images/products/'.$data)}}" alt="{{$data}}">
 														</li>
 													@endforeach
 												</ul>
@@ -98,23 +98,7 @@
 													<li><a href="#" class="four"><i class="ti-check"></i></a></li>
 												</ul>
 											</div> --}}
-											<!--/ End Color -->
-											<!-- Size -->
-											<!-- @if($product_detail->size)
-												<div class="size mt-4">
-													<h4>Size</h4>
-													<ul>
-														@php 
-															$sizes=explode(',',$product_detail->size);
-															// dd($sizes);
-														@endphp
-														@foreach($sizes as $size)
-														<li><a href="#" class="one">{{$size}}</a></li>
-														@endforeach
-													</ul>
-												</div>
-											@endif -->
-											<!--/ End Size -->
+									
 											<!-- Product Buy -->
 											<div class="product-buy">
 												<form action="{{route('single-add-to-cart')}}" method="POST">
@@ -258,7 +242,7 @@
 																	<div class="single-rating">
 																		<div class="rating-author">
 																			@if($data->user_info['photo'])
-																			<img src="{{$data->user_info['photo']}}" alt="{{$data->user_info['photo']}}">
+																			<img src="{{asset('images/users/'.$data->user_info['photo'])}}" alt="{{$data->user_info['photo']}}">
 																			@else 
 																			<img src="{{asset('backend/img/avatar.png')}}" alt="Profile.jpg">
 																			@endif
@@ -325,8 +309,8 @@
 											@php 
 												$photo=explode(',',$data->photo);
 											@endphp
-                                            <img class="default-img" src="{{$photo[0]}}" alt="{{$photo[0]}}">
-                                            <img class="hover-img" src="{{$photo[0]}}" alt="{{$photo[0]}}">
+                                            <img class="default-img" src="{{asset('images/products/'.$photo[0])}}" alt="{{$photo[0]}}">
+                                            <img class="hover-img" src="{{asset('images/users/'.$photo[0])}}" alt="{{$photo[0]}}">
                                             <span class="price-dec">{{$data->discount}} % Off</span>
                                                                     {{-- <span class="out-of-stock">Hot</span> --}}
                                         </a>

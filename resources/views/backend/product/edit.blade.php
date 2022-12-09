@@ -77,22 +77,7 @@
           <span class="text-danger">{{$message}}</span>
           @enderror
         </div>
-        <div class="form-group">
-          <label for="size">Size</label>
-          <!-- <select name="size[]" class="form-control selectpicker"  multiple data-live-search="true">
-              <option value="">--Select any size--</option>
-              @foreach($items as $item)              
-                @php 
-                $data=explode(',',$item->size);
-                // dd($data);
-                @endphp
-              <option value="S"  @if( in_array( "S",$data ) ) selected @endif>Small</option>
-              <option value="M"  @if( in_array( "M",$data ) ) selected @endif>Medium</option>
-              <option value="L"  @if( in_array( "L",$data ) ) selected @endif>Large</option>
-              <option value="XL"  @if( in_array( "XL",$data ) ) selected @endif>Extra Large</option>
-              @endforeach
-          </select> -->
-        </div>
+ 
         <div class="form-group">
           <label for="brand_id">Brand</label>
           <select name="brand_id" class="form-control">
@@ -128,7 +113,7 @@
                   <i class="fas fa-image"></i> Choose
                   </a>
               </span>
-          <input id="thumbnail" class="form-control" type="text" name="photo" value="{{$product->photo}}">
+          <input id="thumbnail" class="form-control" type="file" name="photo" value="{{$product->photo}}">
         </div>
         <div id="holder" style="margin-top:15px;max-height:100px;"></div>
           @error('photo')

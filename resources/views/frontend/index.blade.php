@@ -39,7 +39,7 @@
         <div class="carousel-inner" role="listbox">
                 @foreach($banners as $key=>$banner)
                 <div class="carousel-item {{(($key==0)? 'active' : '')}}">
-                    <img class="first-slide" src="{{$banner->photo}}" alt="First slide">
+                    <img class="first-slide" src="{{asset('images/banners/'.$banner->photo)}}" alt="First slide">
                     <div class="carousel-caption d-none d-md-block text-left">
                         <h1 class="wow fadeInDown">{{$banner->title}}</h1>
                         <p>{!! html_entity_decode($banner->description) !!}</p>
@@ -75,7 +75,7 @@
                         <div class="col-lg-4 col-md-6 col-12">
                             <div class="single-banner">
                                 @if($cat->photo)
-                                    <img src="{{$cat->photo}}" alt="{{$cat->photo}}">
+                                    <img src="{{asset('images/categories/'.$cat->photo)}}" alt="{{$cat->photo}}">
                                 @else
                                     <img src="https://via.placeholder.com/600x370" alt="#">
                                 @endif
@@ -140,8 +140,8 @@
                                                     $photo=explode(',',$product->photo);
                                                 // dd($photo);
                                                 @endphp
-                                                <img class="default-img" src="{{$photo[0]}}" alt="{{$photo[0]}}">
-                                                <img class="hover-img" src="{{$photo[0]}}" alt="{{$photo[0]}}">
+                                                <img class="default-img" src="{{asset('images/products/'.$photo[0])}}" alt="{{$photo[0]}}">
+                                                <img class="hover-img" src="{{asset('images/products/'.$photo[0])}}" alt="{{$photo[0]}}">
                                                 @if($product->stock<=0)
                                                     <span class="out-of-stock">Sale out</span>
                                                 @elseif($product->condition=='new')
@@ -205,7 +205,7 @@
                             @php 
                                 $photo=explode(',',$data->photo);
                             @endphp
-                            <img src="{{$photo[0]}}" alt="{{$photo[0]}}">
+                            <img src="{{asset('images/products/'.$photo[0])}}" alt="{{$photo[0]}}">
                             <div class="content">
                                 <p>{{$data->cat_info['title']}}</p>
                                 <h3>{{$data->title}} <br>Up to<span> {{$data->discount}}%</span></h3>
@@ -244,8 +244,8 @@
                                         $photo=explode(',',$product->photo);
                                     // dd($photo);
                                     @endphp
-                                    <img class="default-img" src="{{$photo[0]}}" alt="{{$photo[0]}}">
-                                    <img class="hover-img" src="{{$photo[0]}}" alt="{{$photo[0]}}">
+                                    <img class="default-img" src="{{asset('images/products/'.$photo[0])}}" alt="{{$photo[0]}}">
+                                    <img class="hover-img" src="{{asset('images/products/'.$photo[0])}}" alt="{{$photo[0]}}">
                                     {{-- <span class="out-of-stock">Hot</span> --}}
                                 </a>
                                 <div class="button-head">
@@ -306,7 +306,7 @@
                                             $photo=explode(',',$product->photo);
                                             // dd($photo);
                                         @endphp
-                                        <img src="{{$photo[0]}}" alt="{{$photo[0]}}">
+                                        <img src="{{asset('images/products/'.$photo[0])}}" alt="{{$photo[0]}}">
                                         <a href="{{route('add-to-cart',$product->slug)}}" class="buy"><i class="fa fa-shopping-bag"></i></a>
                                     </div>
                                 </div>
@@ -340,7 +340,7 @@
                                 $photo=explode(',',$data->photo);
                                 // dd($photo);
                             @endphp
-                            <img src="{{$photo[0]}}" alt="{{$photo[0]}}">
+                            <img src="{{asset('images/products/'.$photo[0])}}" alt="{{$photo[0]}}">
                         </div>	
                     </div>	
                     <div class="col-lg-6 col-12 padding-left">
@@ -354,7 +354,7 @@
                                 @endphp
                                 <h1 class="price">${{number_format($after_discount)}} <s>${{number_format($data->price)}}</s></h1>
                                 <div class="coming-time">
-                                    <div class="clearfix" data-countdown="2021/02/30"></div>
+                                    <div class="clearfix" data-countdown="2023/02/30"></div>
                                 </div>
                             </div>
                         </div>	
@@ -381,7 +381,7 @@
                     <div class="col-lg-4 col-md-6 col-12">
                         <!-- Start Single Blog  -->
                         <div class="shop-single-blog">
-                            <img src="{{$post->photo}}" alt="{{$post->photo}}">
+                            <img src="{{asset('images/posts/'.$post->photo)}}" alt="{{$post->photo}}">
                             <div class="content">
                                 <p class="date">{{$post->created_at->format('d M , Y. D')}}</p>
                                 <a href="{{route('blog.detail',$post->slug)}}" class="title">{{$post->title}}</a>
@@ -466,7 +466,7 @@
                                                 @endphp
                                                 @foreach($photo as $data)
                                                     <div class="single-slider">
-                                                        <img src="{{$data}}" alt="{{$data}}">
+                                                        <img src="{{asset('images/products/'.$data)}}" alt="{{$data}}">
                                                     </div>
                                                 @endforeach
                                             </div>
@@ -513,33 +513,7 @@
                                         <div class="quickview-peragraph">
                                             <p>{!! html_entity_decode($product->summary) !!}</p>
                                         </div>
-                                        <!-- @if($product->size)
-                                            <div class="size">
-                                                <div class="row">
-                                                    <div class="col-lg-6 col-12">
-                                                        <h5 class="title">Size</h5>
-                                                        <select>
-                                                            @php 
-                                                            $sizes=explode(',',$product->size);
-                                                            // dd($sizes);
-                                                            @endphp
-                                                            @foreach($sizes as $size)
-                                                                <option>{{$size}}</option>
-                                                            @endforeach
-                                                        </select>
-                                                    </div>
-                                                    {{-- <div class="col-lg-6 col-12">
-                                                        <h5 class="title">Color</h5>
-                                                        <select>
-                                                            <option selected="selected">orange</option>
-                                                            <option>purple</option>
-                                                            <option>black</option>
-                                                            <option>pink</option>
-                                                        </select>
-                                                    </div> --}}
-                                                </div>
-                                            </div>
-                                        @endif -->
+
                                         <form action="{{route('single-add-to-cart')}}" method="POST" class="mt-4">
                                             @csrf 
                                             <div class="quantity">
