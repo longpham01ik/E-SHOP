@@ -67,20 +67,20 @@ class PaymentController extends Controller
         }
     }
 
-    public function paymentVNPay(Request $request)
+    public function paymentVNPay()
     {
 
-        $data = $request-> all();
-        $code_cart = rand(00,9999);
+        // $data = $request-> all();
+        // $code_cart = rand(00,9999);
         $vnp_Url = "https://sandbox.vnpayment.vn/paymentv2/vpcpay.html";
-        $vnp_Returnurl = "https://localhost/vnpay_php/vnpay_return.php";
-        $vnp_TmnCode = "";//Mã website tại VNPAY 
-        $vnp_HashSecret = ""; //Chuỗi bí mật
+        $vnp_Returnurl = "http://127.0.0.1:8000/cart";
+        $vnp_TmnCode = "QJ93HFP8";//Mã website tại VNPAY 
+        $vnp_HashSecret = "TWMDUHVQXCAFNGAVOYZFEFHBQMZXTIPU"; //Chuỗi bí mật
 
-        $vnp_TxnRef = $code_cart['order_id']; //Mã đơn hàng. Trong thực tế Merchant cần insert đơn hàng vào DB và gửi mã này sang VNPAY
+        $vnp_TxnRef = '1256'; //Mã đơn hàng. Trong thực tế Merchant cần insert đơn hàng vào DB và gửi mã này sang VNPAY
         $vnp_OrderInfo = 'Payments test';
-        $vnp_OrderType = 'bill payments';
-        $vnp_Amount = $data['amount'] * 100;
+        $vnp_OrderType = 'billpayments';
+        $vnp_Amount = 20000 * 100;
         $vnp_Locale = 'vn';
         $vnp_BankCode = 'NCB';
         $vnp_IpAddr = $_SERVER['REMOTE_ADDR'];
@@ -91,7 +91,7 @@ class PaymentController extends Controller
             "vnp_Amount" => $vnp_Amount,
             "vnp_Command" => "pay",
             "vnp_CreateDate" => date('YmdHis'),
-            "vnp_CurrCode" => "$",
+            "vnp_CurrCode" => "VND",
             "vnp_IpAddr" => $vnp_IpAddr,
             "vnp_Locale" => $vnp_Locale,
             "vnp_OrderInfo" => $vnp_OrderInfo,
