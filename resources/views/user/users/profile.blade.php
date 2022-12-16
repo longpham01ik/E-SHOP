@@ -72,8 +72,11 @@
                           <label for="role" class="col-form-label">Role</label>
                           <select name="role" class="form-control">
                               <option value="">-----Select Role-----</option>
+                                @if($profile->role=='admin')
                                   <option value="admin" {{(($profile->role=='admin')? 'selected' : '')}}>Admin</option>
+                                  @else 
                                   <option value="user" {{(($profile->role=='user')? 'selected' : '')}}>User</option>
+                                  @endif
                           </select>
                         @error('role')
                         <span class="text-danger">{{$message}}</span>
