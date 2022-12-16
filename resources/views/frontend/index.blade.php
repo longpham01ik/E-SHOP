@@ -3,30 +3,6 @@
 @section('main-content')
 <!-- Slider Area -->
 <section class="hero-slider">
-    <!-- Single Slider -->
-
-    {{-- <div class="single-slider">
-        <div class="container">
-            <div class="row no-gutters">
-                <div class="col-lg-9 offset-lg-3 col-12">
-                    <div class="text-inner">
-                        <div class="row">
-                            <div class="col-lg-7 col-12">
-                                <div class="hero-text">
-                                    <h1><span>UP TO 50% OFF </span>Shirt For Man</h1>
-                                    <p>Maboriosam in a nesciung eget magnae <br> dapibus disting tloctio in the find it pereri <br> odiy maboriosm.</p>
-                                    <div class="button">
-                                        <a href="#" class="btn">Shop Now!</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> --}}
-    <!--/ End Single Slider -->
 </section>
 @if(count($banners)>0)
     <section id="Gslider" class="carousel slide" data-ride="carousel">
@@ -189,11 +165,6 @@
             </div>
         </div>
 </div>
-<!-- End Product Area -->
-{{-- @php
-    $featured=DB::table('products')->where('is_featured',1)->where('status','active')->orderBy('id','DESC')->limit(1)->get();
-@endphp --}}
-<!-- Start Midium Banner  -->
 <section class="midium-banner">
     <div class="container">
         <div class="row">
@@ -327,45 +298,7 @@
         </div>
     </div>
 </section>
-<!-- End Shop Home List  -->
-{{-- @foreach($featured as $data)
-    <!-- Start Cowndown Area -->
-    <section class="cown-down">
-        <div class="section-inner ">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-6 col-12 padding-right">
-                        <div class="image">
-                            @php 
-                                $photo=explode(',',$data->photo);
-                                // dd($photo);
-                            @endphp
-                            <img src="{{$photo[0]}}" alt="{{$photo[0]}}">
-                        </div>	
-                    </div>	
-                    <div class="col-lg-6 col-12 padding-left">
-                        <div class="content">
-                            <div class="heading-block">
-                                <p class="small-title">Deal of day</p>
-                                <h3 class="title">{{$data->title}}</h3>
-                                <p class="text">{!! html_entity_decode($data->summary) !!}</p>
-                                @php 
-                                    $after_discount=($product->price-($product->price*$product->discount)/100)
-                                @endphp
-                                <h1 class="price">${{number_format($after_discount)}} <s>${{number_format($data->price)}}</s></h1>
-                                <div class="coming-time">
-                                    <div class="clearfix" data-countdown="2021/02/30"></div>
-                                </div>
-                            </div>
-                        </div>	
-                    </div>	
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- /End Cowndown Area -->
-@endforeach --}}
-<!-- Start Shop Blog  -->
+
 <section class="shop-blog section">
     <div class="container">
         <div class="row">
@@ -479,11 +412,7 @@
                                         <div class="quickview-ratting-review">
                                             <div class="quickview-ratting-wrap">
                                                 <div class="quickview-ratting">
-                                                    {{-- <i class="yellow fa fa-star"></i>
-                                                    <i class="yellow fa fa-star"></i>
-                                                    <i class="yellow fa fa-star"></i>
-                                                    <i class="yellow fa fa-star"></i>
-                                                    <i class="fa fa-star"></i> --}}
+                                                    
                                                     @php
                                                         $rate=DB::table('product_reviews')->where('product_id',$product->id)->avg('rate');
                                                         $rate_count=DB::table('product_reviews')->where('product_id',$product->id)->count();
@@ -513,33 +442,7 @@
                                         <div class="quickview-peragraph">
                                             <p>{!! html_entity_decode($product->summary) !!}</p>
                                         </div>
-                                        <!-- @if($product->size)
-                                            <div class="size">
-                                                <div class="row">
-                                                    <div class="col-lg-6 col-12">
-                                                        <h5 class="title">Size</h5>
-                                                        <select>
-                                                            @php 
-                                                            $sizes=explode(',',$product->size);
-                                                            // dd($sizes);
-                                                            @endphp
-                                                            @foreach($sizes as $size)
-                                                                <option>{{$size}}</option>
-                                                            @endforeach
-                                                        </select>
-                                                    </div>
-                                                    {{-- <div class="col-lg-6 col-12">
-                                                        <h5 class="title">Color</h5>
-                                                        <select>
-                                                            <option selected="selected">orange</option>
-                                                            <option>purple</option>
-                                                            <option>black</option>
-                                                            <option>pink</option>
-                                                        </select>
-                                                    </div> --}}
-                                                </div>
-                                            </div>
-                                        @endif -->
+
                                         <form action="{{route('single-add-to-cart')}}" method="POST" class="mt-4">
                                             @csrf 
                                             <div class="quantity">
