@@ -3,7 +3,7 @@
         <i class="fas fa-bell fa-fw"></i>
         <!-- Counter - Alerts -->
         <span class="badge badge-danger badge-counter">
-            @if(count(Auth::user()->unreadNotifications) >5 )<span data-count="5" class="count">5+</span>
+            @if(count(Auth::user()->unreadNotifications) >5 )<span data-count="5" class="count">5</span>
             @else 
                 <span class="count" data-count="{{count(Auth::user()->unreadNotifications)}}">{{count(Auth::user()->unreadNotifications)}}</span>
             @endif

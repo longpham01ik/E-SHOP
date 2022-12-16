@@ -50,7 +50,6 @@ class ProductController extends Controller
             'summary'=>'string|required',
             'description'=>'string|nullable',
             'photo'=>'string|required',
-            // 'size'=>'nullable',
             'stock'=>"required|numeric",
             'cat_id'=>'required|exists:categories,id',
             'brand_id'=>'nullable|exists:brands,id',
