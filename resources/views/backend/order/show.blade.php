@@ -81,13 +81,13 @@
                         <td>Order Status</td>
                         <td> : {{$order->status}}</td>
                     </tr>
-                    <tr>
+                    {{-- <tr>
                       @php
                           $shipping_charge=DB::table('shippings')->where('id',$order->shipping_id)->pluck('price');
                       @endphp
                         <td>Shipping Charge</td>
                         <td> : $ {{number_format($shipping_charge[0],2)}}</td>
-                    </tr>
+                    </tr> --}}
                     <tr>
                       <td>Coupon</td>
                       <td> : $ {{number_format($order->coupon,2)}}</td>

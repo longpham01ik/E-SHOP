@@ -162,6 +162,7 @@ class OrderController extends Controller
         $order=Order::find($id);
         // return $order;
         return view('backend.order.show')->with('order',$order);
+
     }
 
     /**
