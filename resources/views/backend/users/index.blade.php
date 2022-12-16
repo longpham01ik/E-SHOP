@@ -40,7 +40,7 @@
               </tr>
           </tfoot>
           <tbody>
-            @foreach($users as $user)   
+            @foreach($list as $user)   
                 <tr>
                     <td>{{$user->id}}</td>
                     <td>{{$user->name}}</td>
@@ -93,7 +93,7 @@
             @endforeach
           </tbody>
         </table>
-        <span style="float:right">{{$users->links()}}</span>
+        {{-- <span style="float:right">{{$users->links()}}</span> --}}
       </div>
     </div>
 </div>
