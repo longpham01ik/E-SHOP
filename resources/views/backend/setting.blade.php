@@ -32,7 +32,7 @@
                   <i class="fa fa-picture-o"></i> Choose
                   </a>
               </span>
-          <input id="thumbnail1" class="form-control" type="text" name="logo" value="{{$data->logo}}">
+          <input id="thumbnail1" class="form-control" type="file" name="logo" value="{{$data->logo}}">
         </div>
         <div id="holder1" style="margin-top:15px;max-height:100px;"></div>
 
@@ -49,7 +49,7 @@
                   <i class="fa fa-picture-o"></i> Choose
                   </a>
               </span>
-          <input id="thumbnail" class="form-control" type="text" name="photo" value="{{$data->photo}}">
+          <input id="thumbnail" class="form-control" type="file" name="photo" value="{{$data->photo}}">
         </div>
         <div id="holder" style="margin-top:15px;max-height:100px;"></div>
 

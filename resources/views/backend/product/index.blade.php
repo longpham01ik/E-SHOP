@@ -24,7 +24,6 @@
               <th>Is Featured</th>
               <th>Price</th>
               <th>Discount</th>
-              <!-- <th>Size</th> -->
               <th>Condition</th>
               <th>Brand</th>
               <th>Stock</th>
@@ -41,7 +40,6 @@
               <th>Is Featured</th>
               <th>Price</th>
               <th>Discount</th>
-              <!-- <th>Size</th> -->
               <th>Condition</th>
               <th>Brand</th>
               <th>Stock</th>
@@ -71,7 +69,6 @@
                     <td>{{(($product->is_featured==1)? 'Yes': 'No')}}</td>
                     <td>Rs. {{$product->price}} /-</td>
                     <td>  {{$product->discount}}% OFF</td>
-                    <!-- <td>{{$product->size}}</td> -->
                     <td>{{$product->condition}}</td>
                     <td>@foreach($brands as $brand) {{$brand->title}} @endforeach</td>
                     <td>
@@ -87,7 +84,7 @@
                               $photo=explode(',',$product->photo);
                                // dd($photo);
                             @endphp
-                            <img src="{{$photo[0]}}" class="img-fluid zoom" style="max-width:80px" alt="{{$product->photo}}">
+                            <img src="{{asset('images/products/'.$photo[0])}}" class="img-fluid zoom" style="max-width:80px" alt="{{$product->photo}}">
                         @else
                             <img src="{{asset('backend/img/thumbnail-default.jpg')}}" class="img-fluid" style="max-width:80px" alt="avatar.png">
                         @endif

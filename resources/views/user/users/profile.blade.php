@@ -23,7 +23,7 @@
                 <div class="card">
                     <div class="image">
                         @if($profile->photo)
-                        <img class="card-img-top img-fluid roundend-circle mt-4" style="border-radius:50%;height:80px;width:80px;margin:auto;" src="{{$profile->photo}}" alt="profile picture">
+                        <img class="card-img-top img-fluid roundend-circle mt-4" style="border-radius:50%;height:80px;width:80px;margin:auto;" src="{{asset('images/users/'.$profile->photo)}}" alt="profile picture">
                         @else 
                         <img class="card-img-top img-fluid roundend-circle mt-4" style="border-radius:50%;height:80px;width:80px;margin:auto;" src="{{asset('backend/img/avatar.png')}}" alt="profile picture">
                         @endif
@@ -62,7 +62,7 @@
                               <i class="fa fa-picture-o"></i> Choose
                               </a>
                           </span>
-                          <input id="thumbnail" class="form-control" type="text" name="photo" value="{{$profile->photo}}">
+                          <input id="thumbnail" class="form-control" type="file" name="photo" value="{{$profile->photo}}">
                       </div>
                         @error('photo')
                         <span class="text-danger">{{$message}}</span>
