@@ -46,6 +46,11 @@
           <i class="fas fa-home fa-fw"></i>
         </a>
       </li>
+	   <li class="nav-item dropdown no-arrow mx-1">
+        <a class="nav-link dropdown-toggle" href="{{route('home')}}" target="_blank" data-toggle="tooltip" data-placement="bottom" title="home"  role="button">
+          <i class="fas fa-home fa-fw"></i>
+        </a>
+      </li>
 
       <div class="topbar-divider d-none d-sm-block"></div>
 
