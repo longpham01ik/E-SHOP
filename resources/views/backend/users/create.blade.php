@@ -59,7 +59,7 @@
 
                 <select name="role" class="form-control">
                               <option value="">-----Select Role-----</option>
-                                  <option value="admin" {{(($role->role=='admin')? 'selected' : '')}}>Admin</option>
+                              <option value="admin" {{(($role->role=='admin')? 'selected' : '')}}>Admin</option>
                         <option value="user" {{(($role->role=='user')? 'selected' : '')}}>User</option>
                 </select>
 

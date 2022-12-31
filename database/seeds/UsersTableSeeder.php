@@ -26,6 +26,7 @@ class UsersTableSeeder extends Seeder
                 'role'=>'user',
                 'status'=>'active'
             ),
+            
         );
 
         DB::table('users')->insert($data);

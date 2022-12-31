@@ -17,8 +17,8 @@
                 <div class="carousel-item {{(($key==0)? 'active' : '')}}">
                     <img class="first-slide" src="{{asset('images/banners/'.$banner->photo)}}" alt="First slide">
                     <div class="carousel-caption d-none d-md-block text-left">
-                        <h1 class="wow fadeInDown">{{$banner->title}}</h1>
-                        <p>{!! html_entity_decode($banner->description) !!}</p>
+                        <!-- <h1 class="wow fadeInDown">{{$banner->title}}</h1>
+                        <p>{!! html_entity_decode($banner->description) !!}</p> -->
                         <a class="btn btn-lg ws-btn wow fadeInUpBig" href="{{route('product-grids')}}" role="button">Shop Now<i class="far fa-arrow-alt-circle-right"></i></i></a>
                     </div>
                 </div>  
@@ -179,7 +179,7 @@
                             <img src="{{asset('images/products/'.$photo[0])}}" alt="{{$photo[0]}}">
                             <div class="content">
                                 <p>{{$data->cat_info['title']}}</p>
-                                <h3>{{$data->title}} <br>Up to<span> {{$data->discount}}%</span></h3>
+                                <h4>{{$data->title}} <br>Up to<span> {{$data->discount}}%</span></h4>
                                 <a href="{{route('product-detail',$data->slug)}}">Shop Now</a>
                             </div>
                         </div>
