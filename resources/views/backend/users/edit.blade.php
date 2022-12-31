@@ -17,8 +17,9 @@
         </div>
 
         <div class="form-group">
-            <label for="inputEmail" class="col-form-label">Email</label>
-          <input id="inputEmail" type="email" name="email" placeholder="Enter email"  value="{{$user->email}}" class="form-control">
+            <label for="Email" class="col-form-label">Email</label>
+            <p id="Email"  name="email">{{$user->email}}</p>
+          {{-- <input id="inputEmail" type="email" name="email" placeholder="Enter email"  value="{{$user->email}}" class="form-control"> --}}
           @error('email')
           <span class="text-danger">{{$message}}</span>
           @enderror

@@ -429,6 +429,16 @@
                         </div>
                     </div>
                 </form>
+                <form action="{{ route('paymentVNPay') }}" method="POST">
+                    @csrf
+                    <input type="hidden" name="total_vnpay" value="{{number_format($total_amount,2)}}">
+                    <button type="submit" class="btn" name="redirect">PAY VnPay</button>
+                </form>
+                <form action="{{ route('paymentMomo') }}" method="POST">
+                    @csrf
+                    <input type="hidden" name="total_vnpay" value="{{number_format($total_amount,2)}}">
+                    <button type="submit" class="btn" name="redirect">PAY Momo</button>
+                </form>
         </div>
     </section>
     <!--/ End Checkout -->
